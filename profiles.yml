@@ -1,12 +1,12 @@
-# example profiles.yml file
-jaffle_shop:
+# Profiles Yml used to define connections to database sources.
+actors_postgres:
   target: dev
   outputs:
     dev:
       type: postgres
       host: localhost
       user: postgres
-      password: $Test1234$
+      password: $Test1234$ #You can technically use an environment vairable, but better is to keep this from being versioned. "{{ env_var('postgres_password')}}"
       port: 5432
       dbname: postgres
       schema: public
